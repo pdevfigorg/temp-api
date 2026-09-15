@@ -17,6 +17,10 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
+@app.get("/healthz")
+def healthz():
+    return "ok"
+
 @app.get("/getDateTime")
 def getDateTime():
     return {"message": datetime.now()}
